@@ -1,0 +1,1217 @@
+@import './base/base';
+@import './fonts';
+@import './base/mixins';
+@import './base/variabels';
+
+body {
+    @include box (1440px, 3451px, 0px, auto);
+   
+
+    
+
+
+}
+
+// <!-- HEADER -->
+header {
+    @include box (1440px, 700px, 0px, 0px);
+
+    background-image: url(../Images/desktop/Headaer.png);
+
+    .header-menu {
+
+        display: flex;
+
+        &__logo {
+            @include box (152px, 24px, 46px, 250px);
+
+            h3 {
+                @include textDesign ('Montserrat', normal, 700, 20px, 24px, $main-text-color, 0.2px);
+
+            }
+        }
+
+        &-item {
+            @include box (153px, 36px, 40px, 595px);
+            display: flex;
+            justify-content: space-between;
+
+            &-login {
+                @include box (44px, 17px, 11px, 0px);
+
+                &__button {
+                    @include textDesign ('Montserrat', normal, 400, 14px, 18px, $main-text-color, 0px);
+
+                    text-decoration: none;
+
+                }
+
+            }
+
+            &-register {
+                @include box (90px, 36px, 0px, 0px);
+
+                border: 2px solid $main-text-color;
+                border-radius: 40px;
+                padding-top: 10px;
+                display: flex;
+                box-sizing: border-box;
+                justify-content: center;
+
+                &__button {
+                    @include buttonFirst (54px, 17px, 'Montserrat', normal, 400, 14px, 17px, $main-text-color, center, none);
+                }
+            }
+        }
+
+    }
+
+    .header-description {
+        @include box (470px, 255px, 149px, 483px);
+
+        h1 {
+            @include box (470px, 126px, 0px, 0px);
+
+            @include textDesign ('Montserrat', normal, 700, 52px, 63.39px, $main-text-color, 0.7px);
+            text-align: center;
+
+        }
+
+        &__item {
+            @include box (395px, 25px, 27px, 38px);
+
+            @include textDesign ('Roboto', normal, 300, 23px, 24px, $main-text-color, 0.145px);
+
+            text-align: center;
+
+        }
+
+        &__button {
+            @include buttonSecond (225px, 40px, 'Montserrat', normal, 700, 14px, 17px, $main-text-color, center, 33px, 123px, 40px, none, $bagraund-button-color, 0.5px);
+
+        }
+    }
+
+}
+
+// <!-- MAIN -->
+main {
+    @include box (1440px, 2491px, 0px, 0px);
+
+
+    // Work-Description
+    .work-description {
+        @include box (940px, 461px, 95px, 248px);
+
+
+
+        &__header {
+            @include box (342px, 32px, -8px, 297px);
+
+            @include textDesign ('Montserrat', normal, 700, 26px, 32px, $header-color, 0.759px);
+            text-align: center;
+            padding-bottom: 35px;
+        }
+
+        &-item {
+            @include box (940px, 400px, 0px, 0px);
+
+            display: flex;
+            justify-content: space-between;
+
+            &__image {
+                @include box (300px, 400px, 0px, 0px);
+                position: relative;
+            }
+
+            &__stepone {
+                background-image: url(../Images/desktop/Step1.png);
+            }
+
+            &__steptwo {
+                background-image: url(../Images/desktop/Step2.png);
+            }
+
+            &__stepthree {
+                background-image: url(../Images/desktop/Step3.png);
+            }
+
+            &__button {
+                @include buttonSecond (70px, 20px, 'Montserrat', normal, 400, 10px, 12px, $main-text-color, center, 220px, -275px, 40px, none, $bagraund-button-color, 2px);
+                position: absolute;
+                align-items: center;
+                justify-content: center;
+
+            }
+
+            &__buttonTwo {
+                @extend .work-description-item__button;
+                margin-top: 250px;
+
+            }
+
+            &__title {
+                @include box (250px, 58px, -140px, 25px);
+                @include textDesign ('Montserrat', normal, 700, 24px, 26px, $main-text-color, 0.5px);
+
+                position: absolute;
+            }
+
+            &__titleTwo {
+                @extend .work-description-item__title;
+                margin-top: -106px;
+            }
+
+            &__text {
+                @include box (250px, 57px, -61px, 24.5px);
+                @include textDesign ('Roboto', normal, 300, 14px, 14px, $main-text-color, 0px);
+                position: absolute;
+
+            }
+        }
+
+    }
+
+    // <!-- Partner Select -->
+    .partner-select {
+        @include box (941px, 361px, 95px, 250px);
+
+
+        &__header {
+            @extend .work-description__header;
+            @include box (495px, 32px, 1px, 223px);
+
+        }
+
+        &-item {
+
+            @include box (941px, 205px, 0px, 0px);
+            // border: 0.5px solid rgb(81, 0, 255);
+            display: flex;
+            justify-content: space-between;
+
+
+            &__block {
+                @include box (221px, 205px, 0px, 0px);
+
+                &__image {
+                    @include box (120px, 120px, 0px, 48px);
+                    position: relative;
+                    border-radius: 60px;
+
+                }
+
+                &__icon {
+                    @include box (32px, 32px, -30px, 136px);
+
+                    border-radius: 16px;
+                    outline: 5px solid $main-text-color;
+                    background: $bagraund-button-color;
+                    position: absolute;
+
+                    &__one {
+                        @include box (16px, 16px, 8px, 8px);
+
+                    }
+
+                }
+
+                h4 {
+                    @include box (221px, 18px, 18px, -2px);
+                    @include textDesign ('Montserrat', normal, 700, 14px, 17px, $header-color, 0.2px);
+                    text-align: center;
+                    align-items: center;
+
+                }
+
+                &__text {
+                    @include box (221px, 38px, 20px, -2px);
+                    @include textDesign ('Roboto', normal, 300, 13.7px, 14px, $text-color, 0);
+                    text-align: center;
+                    align-items: center;
+
+                    &__three {
+                        margin-top: 25px;
+                        height: 57px;
+                    }
+
+                    &__four {
+                        margin-top: 25px;
+                    }
+
+                }
+
+
+            }
+
+        }
+
+        &-register {
+            @include box (180px, 39px, 55px, 378px);
+
+            background: $main-text-color;
+            border: 2px solid $bagraund-button-color;
+            border-radius: 37px;
+            padding-top: 10px;
+            padding-left: 24px;
+            box-sizing: border-box;
+
+            &__button {
+                @include buttonFirst (137px, 17px, 'Montserrat', normal, 700, 14px, 17px, $bagraund-button-color, center, none);
+                letter-spacing: 0.2px;
+            }
+
+
+        }
+    }
+
+    // <!-- Holiday Ideas -->
+    .holiday-ideas {
+        @include box (940px, 1031px, 95px, 250px);
+        position: relative;
+
+        &__header {
+            @extend .partner-select__header;
+
+        }
+
+        &-images {
+            @include box (940px, 970px, 2px, 0px);
+            position: absolute;
+            display: flex;
+            flex-direction: row;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            align-content: space-between;
+
+            &__small {
+                @include box (300px, 310px, 0px, 0px);
+
+                &__one {
+                    background-image: url(../Images/desktop/Sport.png);
+                    @include box (300px, 310px, 0px, 0px);
+
+                }
+
+                &__two {
+                    background-image: url(../Images/desktop/Health.png);
+                    @include box (300px, 310px, 0px, 0px);
+                }
+
+                &__three {
+                    background-image: url(../Images/desktop/Extreme.png);
+                    @include box (300px, 310px, 0px, 0px);
+                }
+
+                &__four {
+                    background-image: url(../Images/desktop/Games.png);
+                    @include box (300px, 310px, 0px, 0px);
+                }
+
+                &__five {
+                    background-image: url(../Images/desktop/Culture.png);
+                    @include box (620px, 310px, 0px, 0px);
+                }
+
+                &__six {
+                    background-image: url(../Images/desktop/Relaxation.png);
+                    @include box (620px, 310px, 0px, 0px);
+                }
+
+                &__seven {
+                    background-image: url(../Images/desktop/Traveling.png);
+                    @include box (300px, 310px, 0px, 0px);
+                }
+
+                &__text {
+                    @include box (277px, 27px, -168px, auto);
+                    @include textDesign ('Montserrat', normal, 700, 22px, 27px, $main-text-color, 0px);
+                    text-align: center;
+                }
+
+                &__extreme {
+                    @include box (184px, 55px, -181px, 58px);
+                    @include textDesign ('Montserrat', normal, 700, 22px, 27px, $main-text-color, 0px);
+
+                }
+
+            }
+
+            &__big {
+                width: 620px;
+
+                &__text {
+
+                    @include box (277px, 27px, -168px, 173px);
+                    @include textDesign ('Montserrat', normal, 700, 22px, 27px, $main-text-color, 0.5px);
+                }
+
+            }
+
+
+        }
+
+
+    }
+
+    // <!-- partner search -->
+    .partner-search {
+        @include box (482px, 162px, 95px, 478px);
+
+
+        &__header {
+
+            @extend .holiday-ideas__header;
+            @include box (374px, 32px, -1px, 50px);
+            text-align: center;
+            padding-bottom: 52px;
+            letter-spacing: 0px;
+
+        }
+
+        &__text {
+            @include box (415px, 24px, 1px, 35px);
+            @include textDesign ('Roboto', normal, 300, 18px, 14px, $text-color, 0px);
+            text-align: center;
+
+        }
+
+        &-item {
+            @include box (482px, 40px, 15px, 0px);
+
+            display: flex;
+
+            input {
+                @include box (297px, 40px, 2px, -1px);
+                background: $main-text-color;
+                border: 1px solid #D4D4D4;
+                box-shadow: 0px 1px 2px rgba(0, 0, 0, 0.073313);
+                border-radius: 3px;
+                padding: 13px;
+                box-sizing: border-box;
+            }
+
+            input::placeholder {
+                @include textDesign ('Roboto', normal, 300, 14px, 16px, rgb(153, 153, 153), 0px);
+
+            }
+
+            &__button {
+                @include buttonSecond (173px, 40px, 'Montserrat', normal, 700, 14px, 17px, $main-text-color, center, 2px, 10px, 40px, none, rgb(255, 78, 80), 0.5px);
+
+            }
+
+        }
+
+    }
+
+}
+
+
+// FOOTER
+
+footer {
+    @include box (1440px, 224px, -88px, 0px);
+    border-top: 2px solid $bagraund-button-color;
+    display: flex;
+    padding-top: 40px;
+    box-sizing: border-box;
+
+
+    h6 {
+        @include box (119px, 20px, 0px, 249px);
+        margin-right: 122px;
+        @include textDesign ('Montserrat', normal, 400, 16px, 20px, $bagraund-button-color, 0px);
+
+    }
+
+    .company-menu {
+        h4 {
+            @include box (70px, 17px, 0px, 0px);
+            @include textDesign ('Montserrat', normal, 700, 14px, 17px, $header-color, 0px);
+            margin-bottom: 11px;
+        }
+
+        &__item {
+            @include box (115px, 156px, 0px, 0px);
+
+            a {
+                @include textDesign ('Roboto', normal, 300, 14px, 26px, rgb(153, 153, 153), 0px);
+                text-decoration: none;
+            }
+        }
+
+    }
+
+    .partners-item {
+        @include box (64px, 17px, 0px, 125px);
+        @include textDesign ('Montserrat', normal, 700, 14px, 17px, $header-color, 0px);
+    }
+
+    .designe-item {
+        @include box (83px, 12px, 0px, 317px);
+        @include textDesign ('Montserrat', normal, 700, 10px, 12px, rgb(204, 204, 204), 0px);
+
+        &__logo {
+            @include box (110px, 24px, 7px, -30px);
+
+
+        }
+
+    }
+
+}
+
+// Tablet Portrait
+// Tablet Portrait
+
+// Tablet Portrait
+
+@media screen and (max-width: 1150px) {
+    body {
+        @include box (768px, 3679px, 0px, auto);
+        margin: 0px auto;
+    }
+
+    // <!-- HEADER -->
+    header {
+        @include box (768px, 700px, 0px, 0px);
+
+        background-image: url(../Images/table/Background-min.png);
+
+        .header-menu {
+
+            &__logo {
+                @include box (152px, 24px, 45px, 48px);
+            }
+
+            &-item {
+                @include box (153px, 36px, 38px, 365px);
+            }
+        }
+
+        .header-description {
+            @include box (470px, 255px, 149px, 149px);
+        }
+
+    }
+
+    // <!-- MAIN -->
+    main {
+        @include box (768px, 2735px, 0px, 0px);
+
+        // Work-Description
+        .work-description {
+            @include box (748px, 461px, 95px, 10px);
+
+            &__header {
+                @include box (289px, 27px, -1px, 228px);
+
+                @include textDesign ('Montserrat', normal, 700, 21px, 27px, $header-color, 1px);
+
+            }
+
+            &-item {
+                @include box (748px, 400px, 0px, 0px);
+
+                &__image {
+                    @include box (236px, 400px, 0px, 0px);
+
+                }
+
+                &__stepone {
+                    background-image: url(../Images/table/Step1.png);
+
+                }
+
+                &__steptwo {
+                    background-image: url(../Images/table/Step2.png);
+                }
+
+                &__stepthree {
+                    background-image: url(../Images/table/Step3.png);
+                }
+
+                &__button {
+                    @include buttonSecond (70px, 20px, 'Montserrat', normal, 400, 10px, 12px, $main-text-color, center, 205px, -216px, 40px, none, $bagraund-button-color, 2px);
+
+                }
+
+                &__buttonTwo {
+                    margin-top: 255px;
+
+                }
+
+                &__title {
+                    @include box (196px, 58px, -156px, 20px);
+                    @include textDesign ('Montserrat', normal, 700, 24px, 14px, $main-text-color, 0.5px);
+
+                    box-sizing: border-box;
+                    padding-top: 25px;
+
+                }
+
+                &__titleTwo {
+                    @include box (196px, 29px, -111px, 20px);
+                    padding-top: 0px;
+                }
+
+                &__text {
+                    @include box (196px, 76px, -92px, 18px);
+
+                    padding-top: 20px;
+                    box-sizing: border-box;
+
+
+                    &__two {
+                        @include box (196px, 57px, -68px, 18px);
+                        padding-top: 10px;
+                    }
+
+                }
+
+            }
+
+        }
+
+        // <!-- Partner Select -->
+
+        .partner-select {
+            @include box (492px, 605px, 95px, 138px);
+
+            &__header {
+
+                @include box (415px, 27px, -2px, 37px);
+                @include textDesign ('Montserrat', normal, 700, 22px, 27px, $header-color, 0.5px);
+                padding-bottom: 35px;
+            }
+
+            &-item {
+                @include box (492px, 544px, 0px, 0px);
+                flex-wrap: wrap;
+                align-content: flex-start;
+
+                &__block {
+
+                    @include box (236px, 205px, 0px, 0px);
+                    margin-bottom: 35px;
+                    box-sizing: border-box;
+                    order: 0;
+
+                    &__image {
+                        @include box (120px, 120px, 0px, 57px);
+                    }
+
+                    &__icon {
+                        @include box (32px, 32px, -31px, 145px);
+                    }
+
+                    &__two {
+                        order: 2;
+                        margin-bottom: 0px;
+                    }
+
+                    &__three {
+                        order: 1;
+                        @include box (236px, 224px, 0px, 0px);
+                    }
+
+                    &__four {
+
+                        order: 4;
+
+                    }
+
+                    h4 {
+                        @include box (221px, 18px, 20px, 6px);
+
+                    }
+
+                    &__text {
+                        @include box (236px, 38px, 12px, -2px);
+                        @include textDesign ('Roboto', normal, 300, 13.5px, 14px, $text-color, 0);
+                        text-align: center;
+                        padding-top: 8px;
+                        box-sizing: border-box;
+
+                        &__three {
+                            margin-top: 16px;
+                        }
+
+                        &__four {
+                            margin-top: 12px;
+                        }
+
+
+                    }
+
+                }
+            }
+
+            &-register {
+                @include box (180px, 39px, -39px, 156px);
+            }
+
+        }
+
+        .holiday-ideas {
+            @include box (748px, 1031px, 95px, 10px);
+
+            &__header {
+
+                @include textDesign ('Montserrat', normal, 700, 22px, 27px, $header-color, 0.7px);
+                padding-bottom: 37px;
+                @include box (350px, 27px, 4px, 198px);
+
+            }
+
+            &-images {
+                @include box (748px, 974px, -2px, 0px);
+
+                &__small {
+                    @include box (236px, 310px, 0px, 0px);
+
+                    &__one {
+                        background-image: url(../Images/table/Sport.png);
+
+                    }
+
+                    &__two {
+                        background-image: url(../Images/table/Healath.png);
+                    }
+
+                    &__three {
+                        background-image: url(../Images/table/Extreme.png);
+                    }
+
+                    &__four {
+                        background-image: url(../Images/table/Games.png);
+                    }
+
+                    &__five {
+                        background-image: url(../Images/table/Culture.png);
+                    }
+
+                    &__six {
+                        background-image: url(../Images/table/Relaxe.png);
+                    }
+
+                    &__seven {
+                        background-image: url(../Images/table/travelling.png);
+                    }
+
+
+
+                    &__text {
+                        @include box (203px, 54px, -170px, 15px);
+                        text-align: center;
+                    }
+
+                    &__sports {
+                        @include box (195px, 54px, -192px, 15px);
+                    }
+
+                    &__wellness {
+                        margin-top: -182px;
+                    }
+
+                    &__extreme {
+                        margin-top: -182px;
+                        margin-left: 25px;
+
+                    }
+
+                    &__image {
+                        @include box (236px, 310px, 0px, 0px);
+                    }
+
+
+                }
+
+                &__big {
+                    @include box (492px, 310px, 0px, 0px);
+
+                    &__text {
+                        @include box (280px, 27px, -6px, 0px);
+                        @include textDesign ('Montserrat', normal, 700, 22px, 27px, $main-text-color, 0.5px);
+                        align-items: center;
+                        text-align: center;
+                        margin: -168px auto;
+
+
+                    }
+
+                    &__image {
+                        @include box (492px, 310px, 0px, 0px);
+
+                    }
+
+
+                }
+
+            }
+
+        }
+
+        // <!-- partner search -->
+        .partner-search {
+            @include box (482px, 158px, 95px, 143px);
+
+
+            &__header {
+                border: 1 solid rgb(206, 30, 59);
+                @extend .holiday-ideas__header;
+                @include box (350px, 27px, 1px, 72px);
+                padding-bottom: 52px;
+
+            }
+
+            &-item {
+                @include box (482px, 40px, 15px, 2px);
+            }
+
+        }
+
+    }
+
+    // FOOTER
+    footer {
+        @include box (768px, 224px, -96px, 0px);
+
+        h6 {
+            @include box (119px, 20px, 0px, 39px);
+            margin-right: 108px;
+        }
+
+        a {
+            @include textDesign ('Roboto', normal, 300, 14px, 26px, rgb(153, 153, 153), 0px);
+            text-decoration: none;
+        }
+
+        .partners-item {
+            @include box (64px, 17px, 0px, 56px);
+
+        }
+
+        .designe-item {
+            @include box (83px, 12px, 0px, 146px);
+            letter-spacing: 1px;
+
+
+            &__logo {
+                @include box (110px, 24px, 7px, -32px);
+
+
+            }
+
+        }
+
+    }
+
+
+
+}
+
+// Mobile Portrait
+// Mobile Portrait
+// Mobile Portrait
+
+
+@media screen and (max-width: 790px) {
+    body {
+        @include box (320px, 3938px, 0px, auto);
+        margin: 0px auto;
+    }
+
+    // <!-- HEADER -->
+    header {
+        @include box (320px, 540px, 0px, 0px);
+        background-image: url(../Images/mobile/Background-min.png);
+
+        .header-menu {
+
+            &__logo {
+                @include box (152px, 24px, 153px, 97px);
+            }
+
+            &-item {
+                @include box (153px, 36px, 18px, -164px);
+            }
+        }
+
+        .header-description {
+            @include box (280px, 184px, 26.5px, 31px);
+
+            h1 {
+                @include box (272px, 74px, 26.5px, 2px);
+                @include textDesign ('Montserrat', normal, 700, 30px, 37px, $main-text-color, 0px);
+
+            }
+
+            &__item {
+                @include box (280px, 49px, 6px, 0px);
+                @include textDesign ('Roboto', normal, 300, 18px, 24px, $main-text-color, 0.145px);
+
+            }
+
+            &__button {
+                @include buttonSecond (280px, 40px, 'Montserrat', normal, 700, 14px, 17px, $main-text-color, center, 15px, 0px, 40px, none, $bagraund-button-color, 0.5px);
+
+            }
+
+
+        }
+
+    }
+
+    // <!-- MAIN -->
+    main {
+        @include box (320px, 3140px, 0px, 0px);
+
+        // Work-Description
+        .work-description {
+            @include box (300px, 781px, 35px, 10px);
+
+            &__header {
+                @include box (291px, 27px, -2px, 4px);
+
+                @include textDesign ('Montserrat', normal, 700, 21.5px, 27px, $header-color, 1px);
+                padding-bottom: 15px;
+                text-align: center;
+            }
+
+            &-item {
+
+                flex-direction: column;
+                @include box (300px, 739px, 0px, 0px);
+
+                &__image {
+                    @include box (300px, 240px, 0px, 0px);
+                }
+
+                &__stepone {
+                    background-image: url(../Images/mobile/Step1.png);
+                }
+
+                &__steptwo {
+                    background-image: url(../Images/mobile/Step2.png);
+                }
+
+                &__stepthree {
+                    background-image: url(../Images/mobile/Step3.png);
+                }
+
+                &__button {
+                    @include buttonSecond (70px, 20px, 'Montserrat', normal, 400, 10px, 12px, $main-text-color, center, 64px, -280px, 40px, none, $bagraund-button-color, 1px);
+
+                }
+
+                &__buttonTwo {
+                    margin-top: 95px;
+
+                }
+
+                &__title {
+                    @include box (250px, 58px, -110px, 20px);
+                    padding-top: 0px;
+
+                }
+
+                &__titleTwo {
+                    @include box (250, 29px, -96px, 20px);
+                    padding-top: 0px;
+                }
+
+                &__text {
+                    @include box (250px, 57px, -76px, 20px);
+
+                    padding-top: 20px;
+                    box-sizing: border-box;
+
+
+                    &__two {
+                        @include box (250px, 57px, -68px, 18px);
+                        padding-top: 10px;
+                    }
+
+                }
+
+
+            }
+
+
+
+        }
+
+        // <!-- Partner Select -->
+        .partner-select {
+
+            @include box (280px, 1031px, 36px, 10px);
+
+            &__header {
+
+                @include box (280px, 54px, 0px, 10px);
+                padding-bottom: 14px;
+            }
+
+            &-item {
+                @include box (236px, 887px, 0px, 32px);
+                flex-direction: column;
+
+                &__block {
+                    @include box (236px, 205px, 0px, 0px);
+                    margin-bottom: 0px;
+                    order: 0;
+
+
+                    &__image {
+                        @include box (120px, 120px, 0px, 57px);
+                    }
+
+                    &__icon {
+                        @include box (32px, 32px, -31px, 145px);
+                    }
+
+                    &__two {
+                        order: 2;
+                        // margin-bottom: 0px;
+                    }
+
+                    &__three {
+                        order: 1;
+                        @include box (236px, 224px, 0px, 0px);
+                    }
+
+                    &__four {
+
+                        order: 4;
+
+                    }
+
+                }
+
+            }
+
+            &-register {
+                @include box (280px, 40px, 36px, 10px);
+                padding-top: 12px;
+                padding-left: 74px;
+
+                &__button {
+                    @include buttonFirst (137px, 17px, 'Montserrat', normal, 700, 14px, 17px, $bagraund-button-color, center, none);
+                    letter-spacing: 0.2px;
+
+                }
+            }
+
+        }
+
+        .holiday-ideas {
+            @include box (300px, 986px, 35px, 10px);
+            position: relative;
+
+            &__header {
+                padding-bottom: 33px;
+                @include box (280px, 54px, 0px, 10px);
+
+            }
+
+            &-images {
+                @include box (300px, 900px, 0px, 0px);
+                
+
+                flex-direction: column;
+
+                &__small {
+                    @include box (300px, 120px, 0px, 0px);
+                    
+
+                    &__image {
+                        @include box (300px, 120px, 0px, 0px);
+
+
+                    }
+
+                    &__one {
+                        background-image: url(../Images/mobile/Sport.png);
+                    }
+
+                    &__two {
+                        background-image: url(../Images/mobile/Healath.png);
+
+                    }
+
+                    &__three {
+                        background-image: url(../Images/mobile/Extreme.png);
+
+                    }
+
+                    &__four {
+                        background-image: url(../Images/mobile/Games.png);
+
+                    }
+
+                    &__five {
+                        background-image: url(../Images/mobile/Culture.png);
+
+                    }
+
+                    &__six {
+                        background-image: url(../Images/mobile/relax.png);
+
+                    }
+
+                    &__seven {
+                        background-image: url(../Images/mobile/travell.png);
+
+                    }
+
+                    &__text {
+                        @include box (205.5px, 54px, -72px, 45px);
+                    }
+
+                    &__sports {
+                        @include box (196px, 54px, -98px, 45px);
+                    }
+
+                    &__wellness {
+                        @include box (196px, 54px, -90px, 45px);
+                    }
+
+                    &__extreme {
+                        @include box (205.5px, 54px, -90px, 55px);
+
+                    }
+
+                }
+
+                &__big {
+                    @include box (300px, 120px, 0px, 0px);
+
+                    &__image {
+                        @include box (300px, 120px, 0px, 0px);
+
+
+                    }
+
+                    &__text {
+                        @include box (277px, 27px, -75px, 12px);
+                    }
+
+                }
+
+            }
+        }
+
+        // <!-- partner search -->
+        .partner-search {
+            @include box (280px, 192px, 35px, 20px);
+
+
+            &__header {
+
+                @include box (280px, 54px, 0px, 6px);
+                padding-bottom: 18px;
+
+            }
+
+            &__text {
+                @include box (282px, 24px, 3px, 1px);
+
+
+            }
+
+            &-item {
+                @include box (280px, 90px, 4px, 0px);
+                flex-direction: column;
+
+                form {
+                    @include box (280px, 40px, 0px, 0px);
+                }
+
+                input {
+                    @include box (280px, 40px, 0px, 0px);
+                    background: $main-text-color;
+                    border: 1px solid #D4D4D4;
+                    box-shadow: 0px 1px 2px rgba(0, 0, 0, 0.073313);
+                    border-radius: 3px;
+                    padding: 13px;
+                    box-sizing: border-box;
+                }
+
+
+                .partner-search-item__button {
+                    @include buttonSecond (280px, 40px, 'Montserrat', normal, 700, 14px, 17px, $main-text-color, center, 10px, 0px, 40px, none, $bagraund-button-color, 0.5px);
+
+                }
+
+            }
+        }
+    }
+
+    // FOOTER
+    footer {
+        @include box (320px, 204px, 0px, 0px);
+        flex-direction: column;
+        padding-top: 21px;
+
+
+        h6 {
+            @include box (119px, 20px, 0px, 100px);
+            margin-right: 0px;
+        }
+
+        .company-menu {
+
+            text-align: center;
+            margin-bottom: 6px;
+            @include box (280px, 70px, 13px, 20px);
+
+            h4 {
+                @include box (70px, 17px, 0px, 105px);
+                margin-bottom: 1px;
+            }
+
+            &__item {
+
+                @include box (210px, 52px, 0px, 35px);
+                display: flex;
+                flex-direction: row;
+                flex-wrap: wrap;
+                justify-content: space-evenly;
+                align-items: center;
+
+                a {
+                    @include textDesign ('Roboto', normal, 300, 14px, 26px, rgb(153, 153, 153), 0px);
+                    text-decoration: none;
+                }
+
+            }
+
+        }
+
+        .partners-item {
+            @include box (64px, 17px, 0px, 0px);
+
+            h4 {
+                @include box (64px, 17px, 0px, 127.5px);
+            }
+
+        }
+
+        .designe-item {
+            @include box (83px, 12px, 14px, 120px);
+            letter-spacing: 1px;
+
+
+            &__logo {
+                @include box (110px, 24px, 7px, -17px);
+
+
+            }
+
+        }
+    }
+
+
+}

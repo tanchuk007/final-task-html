@@ -1,0 +1,66 @@
+@mixin box ($w, $h, $mt, $ml ) {
+    
+    width: $w;
+    height: $h;
+    margin-top: $mt;
+    margin-left: $ml;
+
+}
+
+@mixin buttonFirst ($w, $h, $ff, $fst, $fw, $fs, $lh, $c, $ta, $td) {
+    //    buttonFirst (54px, 17px, 'Montserrat', normal, 400, 14px, 17px, rgb(255, 255, 255), center,  none)
+    width: $w;
+    height: $h;
+    font-family: $ff;
+    font-style: $fst;
+    font-weight: $fw;
+    font-size: $fs;
+    line-height: $lh;
+    color: $c;
+    text-align: $ta;
+    text-decoration: $td;
+
+}
+
+@mixin buttonSecond ($w, $h, $ff, $fst, $fw, $fs, $lh, $c, $ta, $mt, $ml,  $br, $b,  $bg, $ls )  {
+
+
+    width: $w;
+    height: $h;
+    font-family: $ff;
+    font-style: $fst;
+    font-weight: $fw;
+    font-size: $fs;
+    line-height: $lh;
+    color: $c;
+    text-align: $ta;
+    margin-top: $mt;
+    margin-left: $ml;
+    border-radius: $br;
+    border: $b;
+    background: $bg;
+    letter-spacing:$ls;
+    
+
+
+  
+}
+
+
+@mixin textDesign ($ff, $fst, $fw, $fs, $lh, $c, $lc) {
+
+    font-family:$ff;
+    font-style: $fst;
+    font-weight: $fw;
+    font-size: $fs;
+    line-height: $lh;
+    color: $c;
+    letter-spacing:$lc;
+
+}
+
+
+
+
+
+

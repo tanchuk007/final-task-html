@@ -1,0 +1,1943 @@
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline;
+}
+
+/* make sure to set some focus styles for accessibility */
+:focus {
+  outline: 0;
+}
+
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure,
+footer, header, hgroup, menu, nav, section {
+  display: block;
+}
+
+body {
+  line-height: 1;
+}
+
+ol, ul {
+  list-style: none;
+}
+
+blockquote, q {
+  quotes: none;
+}
+
+blockquote:before, blockquote:after,
+q:before, q:after {
+  content: '';
+  content: none;
+}
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+input[type=search]::-webkit-search-cancel-button,
+input[type=search]::-webkit-search-decoration,
+input[type=search]::-webkit-search-results-button,
+input[type=search]::-webkit-search-results-decoration {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+}
+
+input[type=search] {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  box-sizing: content-box;
+}
+
+textarea {
+  overflow: auto;
+  vertical-align: top;
+  resize: vertical;
+}
+
+/**
+ * Correct `inline-block` display not defined in IE 6/7/8/9 and Firefox 3.
+ */
+audio,
+canvas,
+video {
+  display: inline-block;
+  *display: inline;
+  *zoom: 1;
+  max-width: 100%;
+}
+
+/**
+ * Prevent modern browsers from displaying `audio` without controls.
+ * Remove excess height in iOS 5 devices.
+ */
+audio:not([controls]) {
+  display: none;
+  height: 0;
+}
+
+/**
+ * Address styling not present in IE 7/8/9, Firefox 3, and Safari 4.
+ * Known issue: no IE 6 support.
+ */
+[hidden] {
+  display: none;
+}
+
+/**
+ * 1. Correct text resizing oddly in IE 6/7 when body `font-size` is set using
+ *    `em` units.
+ * 2. Prevent iOS text size adjust after orientation change, without disabling
+ *    user zoom.
+ */
+html {
+  font-size: 100%;
+  /* 1 */
+  -webkit-text-size-adjust: 100%;
+  /* 2 */
+  -ms-text-size-adjust: 100%;
+  /* 2 */
+}
+
+/**
+ * Address `outline` inconsistency between Chrome and other browsers.
+ */
+a:focus {
+  outline: thin dotted;
+}
+
+/**
+ * Improve readability when focused and also mouse hovered in all browsers.
+ */
+a:active,
+a:hover {
+  outline: 0;
+}
+
+/**
+ * 1. Remove border when inside `a` element in IE 6/7/8/9 and Firefox 3.
+ * 2. Improve image quality when scaled in IE 7.
+ */
+img {
+  border: 0;
+  /* 1 */
+  -ms-interpolation-mode: bicubic;
+  /* 2 */
+}
+
+/**
+ * Address margin not present in IE 6/7/8/9, Safari 5, and Opera 11.
+ */
+figure {
+  margin: 0;
+}
+
+/**
+ * Correct margin displayed oddly in IE 6/7.
+ */
+form {
+  margin: 0;
+}
+
+/**
+ * Define consistent border, margin, and padding.
+ */
+fieldset {
+  border: 1px solid #c0c0c0;
+  margin: 0 2px;
+  padding: 0.35em 0.625em 0.75em;
+}
+
+/**
+ * 1. Correct color not being inherited in IE 6/7/8/9.
+ * 2. Correct text not wrapping in Firefox 3.
+ * 3. Correct alignment displayed oddly in IE 6/7.
+ */
+legend {
+  border: 0;
+  /* 1 */
+  padding: 0;
+  white-space: normal;
+  /* 2 */
+  *margin-left: -7px;
+  /* 3 */
+}
+
+/**
+ * 1. Correct font size not being inherited in all browsers.
+ * 2. Address margins set differently in IE 6/7, Firefox 3+, Safari 5,
+ *    and Chrome.
+ * 3. Improve appearance and consistency in all browsers.
+ */
+button,
+input,
+select,
+textarea {
+  font-size: 100%;
+  /* 1 */
+  margin: 0;
+  /* 2 */
+  vertical-align: baseline;
+  /* 3 */
+  *vertical-align: middle;
+  /* 3 */
+}
+
+/**
+ * Address Firefox 3+ setting `line-height` on `input` using `!important` in
+ * the UA stylesheet.
+ */
+button,
+input {
+  line-height: normal;
+}
+
+/**
+ * Address inconsistent `text-transform` inheritance for `button` and `select`.
+ * All other form control elements do not inherit `text-transform` values.
+ * Correct `button` style inheritance in Chrome, Safari 5+, and IE 6+.
+ * Correct `select` style inheritance in Firefox 4+ and Opera.
+ */
+button,
+select {
+  text-transform: none;
+}
+
+/**
+ * 1. Avoid the WebKit bug in Android 4.0.* where (2) destroys native `audio`
+ *    and `video` controls.
+ * 2. Correct inability to style clickable `input` types in iOS.
+ * 3. Improve usability and consistency of cursor style between image-type
+ *    `input` and others.
+ * 4. Remove inner spacing in IE 7 without affecting normal text inputs.
+ *    Known issue: inner spacing remains in IE 6.
+ */
+button,
+html input[type="button"],
+input[type="reset"],
+input[type="submit"] {
+  -webkit-appearance: button;
+  /* 2 */
+  cursor: pointer;
+  /* 3 */
+  *overflow: visible;
+  /* 4 */
+}
+
+/**
+ * Re-set default cursor for disabled elements.
+ */
+button[disabled],
+html input[disabled] {
+  cursor: default;
+}
+
+/**
+ * 1. Address box sizing set to content-box in IE 8/9.
+ * 2. Remove excess padding in IE 8/9.
+ * 3. Remove excess padding in IE 7.
+ *    Known issue: excess padding remains in IE 6.
+ */
+input[type="checkbox"],
+input[type="radio"] {
+  box-sizing: border-box;
+  /* 1 */
+  padding: 0;
+  /* 2 */
+  *height: 13px;
+  /* 3 */
+  *width: 13px;
+  /* 3 */
+}
+
+/**
+ * 1. Address `appearance` set to `searchfield` in Safari 5 and Chrome.
+ * 2. Address `box-sizing` set to `border-box` in Safari 5 and Chrome
+ *    (include `-moz` to future-proof).
+ */
+input[type=search] {
+  -webkit-appearance: textfield;
+  /* 1 */
+  /* 2 */
+  box-sizing: content-box;
+}
+
+/**
+ * Remove inner padding and search cancel button in Safari 5 and Chrome
+ * on OS X.
+ */
+input[type="search"]::-webkit-search-cancel-button,
+input[type="search"]::-webkit-search-decoration {
+  -webkit-appearance: none;
+}
+
+/**
+ * Remove inner padding and border in Firefox 3+.
+ */
+button::-moz-focus-inner,
+input::-moz-focus-inner {
+  border: 0;
+  padding: 0;
+}
+
+/**
+ * 1. Remove default vertical scrollbar in IE 6/7/8/9.
+ * 2. Improve readability and alignment in all browsers.
+ */
+textarea {
+  overflow: auto;
+  /* 1 */
+  vertical-align: top;
+  /* 2 */
+}
+
+/**
+ * Remove most spacing between table cells.
+ */
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+html,
+button,
+input,
+select,
+textarea {
+  color: #222;
+}
+
+::selection {
+  background: #b3d4fc;
+  text-shadow: none;
+}
+
+img {
+  vertical-align: middle;
+}
+
+fieldset {
+  border: 0;
+  margin: 0;
+  padding: 0;
+}
+
+textarea {
+  resize: vertical;
+}
+
+.chromeframe {
+  margin: 0.2em 0;
+  background: #ccc;
+  color: #000;
+  padding: 0.2em 0;
+}
+
+@font-face {
+  font-family: 'Montserrat';
+  src: url("./Fonts/Montserrat/static/Montserrat-Regular.ttf");
+}
+
+@font-face {
+  font-family: 'Roboto';
+  src: url("./Fonts/Roboto/Roboto-Regular.ttf");
+}
+
+body {
+  width: 1440px;
+  height: 3451px;
+  margin-top: 0px;
+  margin-left: auto;
+}
+
+header {
+  width: 1440px;
+  height: 700px;
+  margin-top: 0px;
+  margin-left: 0px;
+  background-image: url(../Images/desktop/Headaer.png);
+}
+
+header .header-menu {
+  display: flex;
+}
+
+header .header-menu__logo {
+  width: 152px;
+  height: 24px;
+  margin-top: 46px;
+  margin-left: 250px;
+}
+
+header .header-menu__logo h3 {
+  font-family: "Montserrat";
+  font-style: normal;
+  font-weight: 700;
+  font-size: 20px;
+  line-height: 24px;
+  color: white;
+  letter-spacing: 0.2px;
+}
+
+header .header-menu-item {
+  width: 153px;
+  height: 36px;
+  margin-top: 40px;
+  margin-left: 595px;
+  display: flex;
+  justify-content: space-between;
+}
+
+header .header-menu-item-login {
+  width: 44px;
+  height: 17px;
+  margin-top: 11px;
+  margin-left: 0px;
+}
+
+header .header-menu-item-login__button {
+  font-family: "Montserrat";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 18px;
+  color: white;
+  letter-spacing: 0px;
+  text-decoration: none;
+}
+
+header .header-menu-item-register {
+  width: 90px;
+  height: 36px;
+  margin-top: 0px;
+  margin-left: 0px;
+  border: 2px solid white;
+  border-radius: 40px;
+  padding-top: 10px;
+  display: flex;
+  box-sizing: border-box;
+  justify-content: center;
+}
+
+header .header-menu-item-register__button {
+  width: 54px;
+  height: 17px;
+  font-family: "Montserrat";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 17px;
+  color: white;
+  text-align: center;
+  text-decoration: none;
+}
+
+header .header-description {
+  width: 470px;
+  height: 255px;
+  margin-top: 149px;
+  margin-left: 483px;
+}
+
+header .header-description h1 {
+  width: 470px;
+  height: 126px;
+  margin-top: 0px;
+  margin-left: 0px;
+  font-family: "Montserrat";
+  font-style: normal;
+  font-weight: 700;
+  font-size: 52px;
+  line-height: 63.39px;
+  color: white;
+  letter-spacing: 0.7px;
+  text-align: center;
+}
+
+header .header-description__item {
+  width: 395px;
+  height: 25px;
+  margin-top: 27px;
+  margin-left: 38px;
+  font-family: "Roboto";
+  font-style: normal;
+  font-weight: 300;
+  font-size: 23px;
+  line-height: 24px;
+  color: white;
+  letter-spacing: 0.145px;
+  text-align: center;
+}
+
+header .header-description__button {
+  width: 225px;
+  height: 40px;
+  font-family: "Montserrat";
+  font-style: normal;
+  font-weight: 700;
+  font-size: 14px;
+  line-height: 17px;
+  color: white;
+  text-align: center;
+  margin-top: 33px;
+  margin-left: 123px;
+  border-radius: 40px;
+  border: none;
+  background: #ff4e50;
+  letter-spacing: 0.5px;
+}
+
+main {
+  width: 1440px;
+  height: 2491px;
+  margin-top: 0px;
+  margin-left: 0px;
+}
+
+main .work-description {
+  width: 940px;
+  height: 461px;
+  margin-top: 95px;
+  margin-left: 248px;
+}
+
+main .work-description__header, main .partner-select__header, main .holiday-ideas__header, main .partner-search__header {
+  width: 342px;
+  height: 32px;
+  margin-top: -8px;
+  margin-left: 297px;
+  font-family: "Montserrat";
+  font-style: normal;
+  font-weight: 700;
+  font-size: 26px;
+  line-height: 32px;
+  color: #444444;
+  letter-spacing: 0.759px;
+  text-align: center;
+  padding-bottom: 35px;
+}
+
+main .work-description-item {
+  width: 940px;
+  height: 400px;
+  margin-top: 0px;
+  margin-left: 0px;
+  display: flex;
+  justify-content: space-between;
+}
+
+main .work-description-item__image {
+  width: 300px;
+  height: 400px;
+  margin-top: 0px;
+  margin-left: 0px;
+  position: relative;
+}
+
+main .work-description-item__stepone {
+  background-image: url(../Images/desktop/Step1.png);
+}
+
+main .work-description-item__steptwo {
+  background-image: url(../Images/desktop/Step2.png);
+}
+
+main .work-description-item__stepthree {
+  background-image: url(../Images/desktop/Step3.png);
+}
+
+main .work-description-item__button, main .work-description-item__buttonTwo {
+  width: 70px;
+  height: 20px;
+  font-family: "Montserrat";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 10px;
+  line-height: 12px;
+  color: white;
+  text-align: center;
+  margin-top: 220px;
+  margin-left: -275px;
+  border-radius: 40px;
+  border: none;
+  background: #ff4e50;
+  letter-spacing: 2px;
+  position: absolute;
+  align-items: center;
+  justify-content: center;
+}
+
+main .work-description-item__buttonTwo {
+  margin-top: 250px;
+}
+
+main .work-description-item__title, main .work-description-item__titleTwo {
+  width: 250px;
+  height: 58px;
+  margin-top: -140px;
+  margin-left: 25px;
+  font-family: "Montserrat";
+  font-style: normal;
+  font-weight: 700;
+  font-size: 24px;
+  line-height: 26px;
+  color: white;
+  letter-spacing: 0.5px;
+  position: absolute;
+}
+
+main .work-description-item__titleTwo {
+  margin-top: -106px;
+}
+
+main .work-description-item__text {
+  width: 250px;
+  height: 57px;
+  margin-top: -61px;
+  margin-left: 24.5px;
+  font-family: "Roboto";
+  font-style: normal;
+  font-weight: 300;
+  font-size: 14px;
+  line-height: 14px;
+  color: white;
+  letter-spacing: 0px;
+  position: absolute;
+}
+
+main .partner-select {
+  width: 941px;
+  height: 361px;
+  margin-top: 95px;
+  margin-left: 250px;
+}
+
+main .partner-select__header, main .holiday-ideas__header, main .partner-search__header {
+  width: 495px;
+  height: 32px;
+  margin-top: 1px;
+  margin-left: 223px;
+}
+
+main .partner-select-item {
+  width: 941px;
+  height: 205px;
+  margin-top: 0px;
+  margin-left: 0px;
+  display: flex;
+  justify-content: space-between;
+}
+
+main .partner-select-item__block {
+  width: 221px;
+  height: 205px;
+  margin-top: 0px;
+  margin-left: 0px;
+}
+
+main .partner-select-item__block__image {
+  width: 120px;
+  height: 120px;
+  margin-top: 0px;
+  margin-left: 48px;
+  position: relative;
+  border-radius: 60px;
+}
+
+main .partner-select-item__block__icon {
+  width: 32px;
+  height: 32px;
+  margin-top: -30px;
+  margin-left: 136px;
+  border-radius: 16px;
+  outline: 5px solid white;
+  background: #ff4e50;
+  position: absolute;
+}
+
+main .partner-select-item__block__icon__one {
+  width: 16px;
+  height: 16px;
+  margin-top: 8px;
+  margin-left: 8px;
+}
+
+main .partner-select-item__block h4 {
+  width: 221px;
+  height: 18px;
+  margin-top: 18px;
+  margin-left: -2px;
+  font-family: "Montserrat";
+  font-style: normal;
+  font-weight: 700;
+  font-size: 14px;
+  line-height: 17px;
+  color: #444444;
+  letter-spacing: 0.2px;
+  text-align: center;
+  align-items: center;
+}
+
+main .partner-select-item__block__text {
+  width: 221px;
+  height: 38px;
+  margin-top: 20px;
+  margin-left: -2px;
+  font-family: "Roboto";
+  font-style: normal;
+  font-weight: 300;
+  font-size: 13.7px;
+  line-height: 14px;
+  color: #666666;
+  letter-spacing: 0;
+  text-align: center;
+  align-items: center;
+}
+
+main .partner-select-item__block__text__three {
+  margin-top: 25px;
+  height: 57px;
+}
+
+main .partner-select-item__block__text__four {
+  margin-top: 25px;
+}
+
+main .partner-select-register {
+  width: 180px;
+  height: 39px;
+  margin-top: 55px;
+  margin-left: 378px;
+  background: white;
+  border: 2px solid #ff4e50;
+  border-radius: 37px;
+  padding-top: 10px;
+  padding-left: 24px;
+  box-sizing: border-box;
+}
+
+main .partner-select-register__button {
+  width: 137px;
+  height: 17px;
+  font-family: "Montserrat";
+  font-style: normal;
+  font-weight: 700;
+  font-size: 14px;
+  line-height: 17px;
+  color: #ff4e50;
+  text-align: center;
+  text-decoration: none;
+  letter-spacing: 0.2px;
+}
+
+main .holiday-ideas {
+  width: 940px;
+  height: 1031px;
+  margin-top: 95px;
+  margin-left: 250px;
+  position: relative;
+}
+
+main .holiday-ideas-images {
+  width: 940px;
+  height: 970px;
+  margin-top: 2px;
+  margin-left: 0px;
+  position: absolute;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-content: space-between;
+}
+
+main .holiday-ideas-images__small {
+  width: 300px;
+  height: 310px;
+  margin-top: 0px;
+  margin-left: 0px;
+}
+
+main .holiday-ideas-images__small__one {
+  background-image: url(../Images/desktop/Sport.png);
+  width: 300px;
+  height: 310px;
+  margin-top: 0px;
+  margin-left: 0px;
+}
+
+main .holiday-ideas-images__small__two {
+  background-image: url(../Images/desktop/Health.png);
+  width: 300px;
+  height: 310px;
+  margin-top: 0px;
+  margin-left: 0px;
+}
+
+main .holiday-ideas-images__small__three {
+  background-image: url(../Images/desktop/Extreme.png);
+  width: 300px;
+  height: 310px;
+  margin-top: 0px;
+  margin-left: 0px;
+}
+
+main .holiday-ideas-images__small__four {
+  background-image: url(../Images/desktop/Games.png);
+  width: 300px;
+  height: 310px;
+  margin-top: 0px;
+  margin-left: 0px;
+}
+
+main .holiday-ideas-images__small__five {
+  background-image: url(../Images/desktop/Culture.png);
+  width: 620px;
+  height: 310px;
+  margin-top: 0px;
+  margin-left: 0px;
+}
+
+main .holiday-ideas-images__small__six {
+  background-image: url(../Images/desktop/Relaxation.png);
+  width: 620px;
+  height: 310px;
+  margin-top: 0px;
+  margin-left: 0px;
+}
+
+main .holiday-ideas-images__small__seven {
+  background-image: url(../Images/desktop/Traveling.png);
+  width: 300px;
+  height: 310px;
+  margin-top: 0px;
+  margin-left: 0px;
+}
+
+main .holiday-ideas-images__small__text {
+  width: 277px;
+  height: 27px;
+  margin-top: -168px;
+  margin-left: auto;
+  font-family: "Montserrat";
+  font-style: normal;
+  font-weight: 700;
+  font-size: 22px;
+  line-height: 27px;
+  color: white;
+  letter-spacing: 0px;
+  text-align: center;
+}
+
+main .holiday-ideas-images__small__extreme {
+  width: 184px;
+  height: 55px;
+  margin-top: -181px;
+  margin-left: 58px;
+  font-family: "Montserrat";
+  font-style: normal;
+  font-weight: 700;
+  font-size: 22px;
+  line-height: 27px;
+  color: white;
+  letter-spacing: 0px;
+}
+
+main .holiday-ideas-images__big {
+  width: 620px;
+}
+
+main .holiday-ideas-images__big__text {
+  width: 277px;
+  height: 27px;
+  margin-top: -168px;
+  margin-left: 173px;
+  font-family: "Montserrat";
+  font-style: normal;
+  font-weight: 700;
+  font-size: 22px;
+  line-height: 27px;
+  color: white;
+  letter-spacing: 0.5px;
+}
+
+main .partner-search {
+  width: 482px;
+  height: 162px;
+  margin-top: 95px;
+  margin-left: 478px;
+}
+
+main .partner-search__header {
+  width: 374px;
+  height: 32px;
+  margin-top: -1px;
+  margin-left: 50px;
+  text-align: center;
+  padding-bottom: 52px;
+  letter-spacing: 0px;
+}
+
+main .partner-search__text {
+  width: 415px;
+  height: 24px;
+  margin-top: 1px;
+  margin-left: 35px;
+  font-family: "Roboto";
+  font-style: normal;
+  font-weight: 300;
+  font-size: 18px;
+  line-height: 14px;
+  color: #666666;
+  letter-spacing: 0px;
+  text-align: center;
+}
+
+main .partner-search-item {
+  width: 482px;
+  height: 40px;
+  margin-top: 15px;
+  margin-left: 0px;
+  display: flex;
+}
+
+main .partner-search-item input {
+  width: 297px;
+  height: 40px;
+  margin-top: 2px;
+  margin-left: -1px;
+  background: white;
+  border: 1px solid #D4D4D4;
+  box-shadow: 0px 1px 2px rgba(0, 0, 0, 0.073313);
+  border-radius: 3px;
+  padding: 13px;
+  box-sizing: border-box;
+}
+
+main .partner-search-item input::placeholder {
+  font-family: "Roboto";
+  font-style: normal;
+  font-weight: 300;
+  font-size: 14px;
+  line-height: 16px;
+  color: #999999;
+  letter-spacing: 0px;
+}
+
+main .partner-search-item__button {
+  width: 173px;
+  height: 40px;
+  font-family: "Montserrat";
+  font-style: normal;
+  font-weight: 700;
+  font-size: 14px;
+  line-height: 17px;
+  color: white;
+  text-align: center;
+  margin-top: 2px;
+  margin-left: 10px;
+  border-radius: 40px;
+  border: none;
+  background: #ff4e50;
+  letter-spacing: 0.5px;
+}
+
+footer {
+  width: 1440px;
+  height: 224px;
+  margin-top: -88px;
+  margin-left: 0px;
+  border-top: 2px solid #ff4e50;
+  display: flex;
+  padding-top: 40px;
+  box-sizing: border-box;
+}
+
+footer h6 {
+  width: 119px;
+  height: 20px;
+  margin-top: 0px;
+  margin-left: 249px;
+  margin-right: 122px;
+  font-family: "Montserrat";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 20px;
+  color: #ff4e50;
+  letter-spacing: 0px;
+}
+
+footer .company-menu h4 {
+  width: 70px;
+  height: 17px;
+  margin-top: 0px;
+  margin-left: 0px;
+  font-family: "Montserrat";
+  font-style: normal;
+  font-weight: 700;
+  font-size: 14px;
+  line-height: 17px;
+  color: #444444;
+  letter-spacing: 0px;
+  margin-bottom: 11px;
+}
+
+footer .company-menu__item {
+  width: 115px;
+  height: 156px;
+  margin-top: 0px;
+  margin-left: 0px;
+}
+
+footer .company-menu__item a {
+  font-family: "Roboto";
+  font-style: normal;
+  font-weight: 300;
+  font-size: 14px;
+  line-height: 26px;
+  color: #999999;
+  letter-spacing: 0px;
+  text-decoration: none;
+}
+
+footer .partners-item {
+  width: 64px;
+  height: 17px;
+  margin-top: 0px;
+  margin-left: 125px;
+  font-family: "Montserrat";
+  font-style: normal;
+  font-weight: 700;
+  font-size: 14px;
+  line-height: 17px;
+  color: #444444;
+  letter-spacing: 0px;
+}
+
+footer .designe-item {
+  width: 83px;
+  height: 12px;
+  margin-top: 0px;
+  margin-left: 317px;
+  font-family: "Montserrat";
+  font-style: normal;
+  font-weight: 700;
+  font-size: 10px;
+  line-height: 12px;
+  color: #cccccc;
+  letter-spacing: 0px;
+}
+
+footer .designe-item__logo {
+  width: 110px;
+  height: 24px;
+  margin-top: 7px;
+  margin-left: -30px;
+}
+
+@media screen and (max-width: 1150px) {
+  body {
+    width: 768px;
+    height: 3679px;
+    margin-top: 0px;
+    margin-left: auto;
+    margin: 0px auto;
+  }
+  header {
+    width: 768px;
+    height: 700px;
+    margin-top: 0px;
+    margin-left: 0px;
+    background-image: url(../Images/table/Background-min.png);
+  }
+  header .header-menu__logo {
+    width: 152px;
+    height: 24px;
+    margin-top: 45px;
+    margin-left: 48px;
+  }
+  header .header-menu-item {
+    width: 153px;
+    height: 36px;
+    margin-top: 38px;
+    margin-left: 365px;
+  }
+  header .header-description {
+    width: 470px;
+    height: 255px;
+    margin-top: 149px;
+    margin-left: 149px;
+  }
+  main {
+    width: 768px;
+    height: 2735px;
+    margin-top: 0px;
+    margin-left: 0px;
+  }
+  main .work-description {
+    width: 748px;
+    height: 461px;
+    margin-top: 95px;
+    margin-left: 10px;
+  }
+  main .work-description__header, main .partner-select__header, main .holiday-ideas__header, main .partner-search__header {
+    width: 289px;
+    height: 27px;
+    margin-top: -1px;
+    margin-left: 228px;
+    font-family: "Montserrat";
+    font-style: normal;
+    font-weight: 700;
+    font-size: 21px;
+    line-height: 27px;
+    color: #444444;
+    letter-spacing: 1px;
+  }
+  main .work-description-item {
+    width: 748px;
+    height: 400px;
+    margin-top: 0px;
+    margin-left: 0px;
+  }
+  main .work-description-item__image {
+    width: 236px;
+    height: 400px;
+    margin-top: 0px;
+    margin-left: 0px;
+  }
+  main .work-description-item__stepone {
+    background-image: url(../Images/table/Step1.png);
+  }
+  main .work-description-item__steptwo {
+    background-image: url(../Images/table/Step2.png);
+  }
+  main .work-description-item__stepthree {
+    background-image: url(../Images/table/Step3.png);
+  }
+  main .work-description-item__button, main .work-description-item__buttonTwo {
+    width: 70px;
+    height: 20px;
+    font-family: "Montserrat";
+    font-style: normal;
+    font-weight: 400;
+    font-size: 10px;
+    line-height: 12px;
+    color: white;
+    text-align: center;
+    margin-top: 205px;
+    margin-left: -216px;
+    border-radius: 40px;
+    border: none;
+    background: #ff4e50;
+    letter-spacing: 2px;
+  }
+  main .work-description-item__buttonTwo {
+    margin-top: 255px;
+  }
+  main .work-description-item__title, main .work-description-item__titleTwo {
+    width: 196px;
+    height: 58px;
+    margin-top: -156px;
+    margin-left: 20px;
+    font-family: "Montserrat";
+    font-style: normal;
+    font-weight: 700;
+    font-size: 24px;
+    line-height: 14px;
+    color: white;
+    letter-spacing: 0.5px;
+    box-sizing: border-box;
+    padding-top: 25px;
+  }
+  main .work-description-item__titleTwo {
+    width: 196px;
+    height: 29px;
+    margin-top: -111px;
+    margin-left: 20px;
+    padding-top: 0px;
+  }
+  main .work-description-item__text {
+    width: 196px;
+    height: 76px;
+    margin-top: -92px;
+    margin-left: 18px;
+    padding-top: 20px;
+    box-sizing: border-box;
+  }
+  main .work-description-item__text__two {
+    width: 196px;
+    height: 57px;
+    margin-top: -68px;
+    margin-left: 18px;
+    padding-top: 10px;
+  }
+  main .partner-select {
+    width: 492px;
+    height: 605px;
+    margin-top: 95px;
+    margin-left: 138px;
+  }
+  main .partner-select__header, main .holiday-ideas__header, main .partner-search__header {
+    width: 415px;
+    height: 27px;
+    margin-top: -2px;
+    margin-left: 37px;
+    font-family: "Montserrat";
+    font-style: normal;
+    font-weight: 700;
+    font-size: 22px;
+    line-height: 27px;
+    color: #444444;
+    letter-spacing: 0.5px;
+    padding-bottom: 35px;
+  }
+  main .partner-select-item {
+    width: 492px;
+    height: 544px;
+    margin-top: 0px;
+    margin-left: 0px;
+    flex-wrap: wrap;
+    align-content: flex-start;
+  }
+  main .partner-select-item__block {
+    width: 236px;
+    height: 205px;
+    margin-top: 0px;
+    margin-left: 0px;
+    margin-bottom: 35px;
+    box-sizing: border-box;
+    order: 0;
+  }
+  main .partner-select-item__block__image {
+    width: 120px;
+    height: 120px;
+    margin-top: 0px;
+    margin-left: 57px;
+  }
+  main .partner-select-item__block__icon {
+    width: 32px;
+    height: 32px;
+    margin-top: -31px;
+    margin-left: 145px;
+  }
+  main .partner-select-item__block__two {
+    order: 2;
+    margin-bottom: 0px;
+  }
+  main .partner-select-item__block__three {
+    order: 1;
+    width: 236px;
+    height: 224px;
+    margin-top: 0px;
+    margin-left: 0px;
+  }
+  main .partner-select-item__block__four {
+    order: 4;
+  }
+  main .partner-select-item__block h4 {
+    width: 221px;
+    height: 18px;
+    margin-top: 20px;
+    margin-left: 6px;
+  }
+  main .partner-select-item__block__text {
+    width: 236px;
+    height: 38px;
+    margin-top: 12px;
+    margin-left: -2px;
+    font-family: "Roboto";
+    font-style: normal;
+    font-weight: 300;
+    font-size: 13.5px;
+    line-height: 14px;
+    color: #666666;
+    letter-spacing: 0;
+    text-align: center;
+    padding-top: 8px;
+    box-sizing: border-box;
+  }
+  main .partner-select-item__block__text__three {
+    margin-top: 16px;
+  }
+  main .partner-select-item__block__text__four {
+    margin-top: 12px;
+  }
+  main .partner-select-register {
+    width: 180px;
+    height: 39px;
+    margin-top: -39px;
+    margin-left: 156px;
+  }
+  main .holiday-ideas {
+    width: 748px;
+    height: 1031px;
+    margin-top: 95px;
+    margin-left: 10px;
+  }
+  main .holiday-ideas__header, main .partner-search__header {
+    font-family: "Montserrat";
+    font-style: normal;
+    font-weight: 700;
+    font-size: 22px;
+    line-height: 27px;
+    color: #444444;
+    letter-spacing: 0.7px;
+    padding-bottom: 37px;
+    width: 350px;
+    height: 27px;
+    margin-top: 4px;
+    margin-left: 198px;
+  }
+  main .holiday-ideas-images {
+    width: 748px;
+    height: 974px;
+    margin-top: -2px;
+    margin-left: 0px;
+  }
+  main .holiday-ideas-images__small {
+    width: 236px;
+    height: 310px;
+    margin-top: 0px;
+    margin-left: 0px;
+  }
+  main .holiday-ideas-images__small__one {
+    background-image: url(../Images/table/Sport.png);
+  }
+  main .holiday-ideas-images__small__two {
+    background-image: url(../Images/table/Healath.png);
+  }
+  main .holiday-ideas-images__small__three {
+    background-image: url(../Images/table/Extreme.png);
+  }
+  main .holiday-ideas-images__small__four {
+    background-image: url(../Images/table/Games.png);
+  }
+  main .holiday-ideas-images__small__five {
+    background-image: url(../Images/table/Culture.png);
+  }
+  main .holiday-ideas-images__small__six {
+    background-image: url(../Images/table/Relaxe.png);
+  }
+  main .holiday-ideas-images__small__seven {
+    background-image: url(../Images/table/travelling.png);
+  }
+  main .holiday-ideas-images__small__text {
+    width: 203px;
+    height: 54px;
+    margin-top: -170px;
+    margin-left: 15px;
+    text-align: center;
+  }
+  main .holiday-ideas-images__small__sports {
+    width: 195px;
+    height: 54px;
+    margin-top: -192px;
+    margin-left: 15px;
+  }
+  main .holiday-ideas-images__small__wellness {
+    margin-top: -182px;
+  }
+  main .holiday-ideas-images__small__extreme {
+    margin-top: -182px;
+    margin-left: 25px;
+  }
+  main .holiday-ideas-images__small__image {
+    width: 236px;
+    height: 310px;
+    margin-top: 0px;
+    margin-left: 0px;
+  }
+  main .holiday-ideas-images__big {
+    width: 492px;
+    height: 310px;
+    margin-top: 0px;
+    margin-left: 0px;
+  }
+  main .holiday-ideas-images__big__text {
+    width: 280px;
+    height: 27px;
+    margin-top: -6px;
+    margin-left: 0px;
+    font-family: "Montserrat";
+    font-style: normal;
+    font-weight: 700;
+    font-size: 22px;
+    line-height: 27px;
+    color: white;
+    letter-spacing: 0.5px;
+    align-items: center;
+    text-align: center;
+    margin: -168px auto;
+  }
+  main .holiday-ideas-images__big__image {
+    width: 492px;
+    height: 310px;
+    margin-top: 0px;
+    margin-left: 0px;
+  }
+  main .partner-search {
+    width: 482px;
+    height: 158px;
+    margin-top: 95px;
+    margin-left: 143px;
+  }
+  main .partner-search__header {
+    border: 1 solid #ce1e3b;
+    width: 350px;
+    height: 27px;
+    margin-top: 1px;
+    margin-left: 72px;
+    padding-bottom: 52px;
+  }
+  main .partner-search-item {
+    width: 482px;
+    height: 40px;
+    margin-top: 15px;
+    margin-left: 2px;
+  }
+  footer {
+    width: 768px;
+    height: 224px;
+    margin-top: -96px;
+    margin-left: 0px;
+  }
+  footer h6 {
+    width: 119px;
+    height: 20px;
+    margin-top: 0px;
+    margin-left: 39px;
+    margin-right: 108px;
+  }
+  footer a {
+    font-family: "Roboto";
+    font-style: normal;
+    font-weight: 300;
+    font-size: 14px;
+    line-height: 26px;
+    color: #999999;
+    letter-spacing: 0px;
+    text-decoration: none;
+  }
+  footer .partners-item {
+    width: 64px;
+    height: 17px;
+    margin-top: 0px;
+    margin-left: 56px;
+  }
+  footer .designe-item {
+    width: 83px;
+    height: 12px;
+    margin-top: 0px;
+    margin-left: 146px;
+    letter-spacing: 1px;
+  }
+  footer .designe-item__logo {
+    width: 110px;
+    height: 24px;
+    margin-top: 7px;
+    margin-left: -32px;
+  }
+}
+
+@media screen and (max-width: 790px) {
+  body {
+    width: 320px;
+    height: 3938px;
+    margin-top: 0px;
+    margin-left: auto;
+    margin: 0px auto;
+  }
+  header {
+    width: 320px;
+    height: 540px;
+    margin-top: 0px;
+    margin-left: 0px;
+    background-image: url(../Images/mobile/Background-min.png);
+  }
+  header .header-menu__logo {
+    width: 152px;
+    height: 24px;
+    margin-top: 153px;
+    margin-left: 97px;
+  }
+  header .header-menu-item {
+    width: 153px;
+    height: 36px;
+    margin-top: 18px;
+    margin-left: -164px;
+  }
+  header .header-description {
+    width: 280px;
+    height: 184px;
+    margin-top: 26.5px;
+    margin-left: 31px;
+  }
+  header .header-description h1 {
+    width: 272px;
+    height: 74px;
+    margin-top: 26.5px;
+    margin-left: 2px;
+    font-family: "Montserrat";
+    font-style: normal;
+    font-weight: 700;
+    font-size: 30px;
+    line-height: 37px;
+    color: white;
+    letter-spacing: 0px;
+  }
+  header .header-description__item {
+    width: 280px;
+    height: 49px;
+    margin-top: 6px;
+    margin-left: 0px;
+    font-family: "Roboto";
+    font-style: normal;
+    font-weight: 300;
+    font-size: 18px;
+    line-height: 24px;
+    color: white;
+    letter-spacing: 0.145px;
+  }
+  header .header-description__button {
+    width: 280px;
+    height: 40px;
+    font-family: "Montserrat";
+    font-style: normal;
+    font-weight: 700;
+    font-size: 14px;
+    line-height: 17px;
+    color: white;
+    text-align: center;
+    margin-top: 15px;
+    margin-left: 0px;
+    border-radius: 40px;
+    border: none;
+    background: #ff4e50;
+    letter-spacing: 0.5px;
+  }
+  main {
+    width: 320px;
+    height: 3140px;
+    margin-top: 0px;
+    margin-left: 0px;
+  }
+  main .work-description {
+    width: 300px;
+    height: 781px;
+    margin-top: 35px;
+    margin-left: 10px;
+  }
+  main .work-description__header, main .partner-select__header, main .holiday-ideas__header, main .partner-search__header {
+    width: 291px;
+    height: 27px;
+    margin-top: -2px;
+    margin-left: 4px;
+    font-family: "Montserrat";
+    font-style: normal;
+    font-weight: 700;
+    font-size: 21.5px;
+    line-height: 27px;
+    color: #444444;
+    letter-spacing: 1px;
+    padding-bottom: 15px;
+    text-align: center;
+  }
+  main .work-description-item {
+    flex-direction: column;
+    width: 300px;
+    height: 739px;
+    margin-top: 0px;
+    margin-left: 0px;
+  }
+  main .work-description-item__image {
+    width: 300px;
+    height: 240px;
+    margin-top: 0px;
+    margin-left: 0px;
+  }
+  main .work-description-item__stepone {
+    background-image: url(../Images/mobile/Step1.png);
+  }
+  main .work-description-item__steptwo {
+    background-image: url(../Images/mobile/Step2.png);
+  }
+  main .work-description-item__stepthree {
+    background-image: url(../Images/mobile/Step3.png);
+  }
+  main .work-description-item__button, main .work-description-item__buttonTwo {
+    width: 70px;
+    height: 20px;
+    font-family: "Montserrat";
+    font-style: normal;
+    font-weight: 400;
+    font-size: 10px;
+    line-height: 12px;
+    color: white;
+    text-align: center;
+    margin-top: 64px;
+    margin-left: -280px;
+    border-radius: 40px;
+    border: none;
+    background: #ff4e50;
+    letter-spacing: 1px;
+  }
+  main .work-description-item__buttonTwo {
+    margin-top: 95px;
+  }
+  main .work-description-item__title, main .work-description-item__titleTwo {
+    width: 250px;
+    height: 58px;
+    margin-top: -110px;
+    margin-left: 20px;
+    padding-top: 0px;
+  }
+  main .work-description-item__titleTwo {
+    width: 250;
+    height: 29px;
+    margin-top: -96px;
+    margin-left: 20px;
+    padding-top: 0px;
+  }
+  main .work-description-item__text {
+    width: 250px;
+    height: 57px;
+    margin-top: -76px;
+    margin-left: 20px;
+    padding-top: 20px;
+    box-sizing: border-box;
+  }
+  main .work-description-item__text__two {
+    width: 250px;
+    height: 57px;
+    margin-top: -68px;
+    margin-left: 18px;
+    padding-top: 10px;
+  }
+  main .partner-select {
+    width: 280px;
+    height: 1031px;
+    margin-top: 36px;
+    margin-left: 10px;
+  }
+  main .partner-select__header, main .holiday-ideas__header, main .partner-search__header {
+    width: 280px;
+    height: 54px;
+    margin-top: 0px;
+    margin-left: 10px;
+    padding-bottom: 14px;
+  }
+  main .partner-select-item {
+    width: 236px;
+    height: 887px;
+    margin-top: 0px;
+    margin-left: 32px;
+    flex-direction: column;
+  }
+  main .partner-select-item__block {
+    width: 236px;
+    height: 205px;
+    margin-top: 0px;
+    margin-left: 0px;
+    margin-bottom: 0px;
+    order: 0;
+  }
+  main .partner-select-item__block__image {
+    width: 120px;
+    height: 120px;
+    margin-top: 0px;
+    margin-left: 57px;
+  }
+  main .partner-select-item__block__icon {
+    width: 32px;
+    height: 32px;
+    margin-top: -31px;
+    margin-left: 145px;
+  }
+  main .partner-select-item__block__two {
+    order: 2;
+  }
+  main .partner-select-item__block__three {
+    order: 1;
+    width: 236px;
+    height: 224px;
+    margin-top: 0px;
+    margin-left: 0px;
+  }
+  main .partner-select-item__block__four {
+    order: 4;
+  }
+  main .partner-select-register {
+    width: 280px;
+    height: 40px;
+    margin-top: 36px;
+    margin-left: 10px;
+    padding-top: 12px;
+    padding-left: 74px;
+  }
+  main .partner-select-register__button {
+    width: 137px;
+    height: 17px;
+    font-family: "Montserrat";
+    font-style: normal;
+    font-weight: 700;
+    font-size: 14px;
+    line-height: 17px;
+    color: #ff4e50;
+    text-align: center;
+    text-decoration: none;
+    letter-spacing: 0.2px;
+  }
+  main .holiday-ideas {
+    width: 300px;
+    height: 986px;
+    margin-top: 35px;
+    margin-left: 10px;
+    position: relative;
+  }
+  main .holiday-ideas__header, main .partner-search__header {
+    padding-bottom: 33px;
+    width: 280px;
+    height: 54px;
+    margin-top: 0px;
+    margin-left: 10px;
+  }
+  main .holiday-ideas-images {
+    width: 300px;
+    height: 900px;
+    margin-top: 0px;
+    margin-left: 0px;
+    flex-direction: column;
+  }
+  main .holiday-ideas-images__small {
+    width: 300px;
+    height: 120px;
+    margin-top: 0px;
+    margin-left: 0px;
+  }
+  main .holiday-ideas-images__small__image {
+    width: 300px;
+    height: 120px;
+    margin-top: 0px;
+    margin-left: 0px;
+  }
+  main .holiday-ideas-images__small__one {
+    background-image: url(../Images/mobile/Sport.png);
+  }
+  main .holiday-ideas-images__small__two {
+    background-image: url(../Images/mobile/Healath.png);
+  }
+  main .holiday-ideas-images__small__three {
+    background-image: url(../Images/mobile/Extreme.png);
+  }
+  main .holiday-ideas-images__small__four {
+    background-image: url(../Images/mobile/Games.png);
+  }
+  main .holiday-ideas-images__small__five {
+    background-image: url(../Images/mobile/Culture.png);
+  }
+  main .holiday-ideas-images__small__six {
+    background-image: url(../Images/mobile/relax.png);
+  }
+  main .holiday-ideas-images__small__seven {
+    background-image: url(../Images/mobile/travell.png);
+  }
+  main .holiday-ideas-images__small__text {
+    width: 205.5px;
+    height: 54px;
+    margin-top: -72px;
+    margin-left: 45px;
+  }
+  main .holiday-ideas-images__small__sports {
+    width: 196px;
+    height: 54px;
+    margin-top: -98px;
+    margin-left: 45px;
+  }
+  main .holiday-ideas-images__small__wellness {
+    width: 196px;
+    height: 54px;
+    margin-top: -90px;
+    margin-left: 45px;
+  }
+  main .holiday-ideas-images__small__extreme {
+    width: 205.5px;
+    height: 54px;
+    margin-top: -90px;
+    margin-left: 55px;
+  }
+  main .holiday-ideas-images__big {
+    width: 300px;
+    height: 120px;
+    margin-top: 0px;
+    margin-left: 0px;
+  }
+  main .holiday-ideas-images__big__image {
+    width: 300px;
+    height: 120px;
+    margin-top: 0px;
+    margin-left: 0px;
+  }
+  main .holiday-ideas-images__big__text {
+    width: 277px;
+    height: 27px;
+    margin-top: -75px;
+    margin-left: 12px;
+  }
+  main .partner-search {
+    width: 280px;
+    height: 192px;
+    margin-top: 35px;
+    margin-left: 20px;
+  }
+  main .partner-search__header {
+    width: 280px;
+    height: 54px;
+    margin-top: 0px;
+    margin-left: 6px;
+    padding-bottom: 18px;
+  }
+  main .partner-search__text {
+    width: 282px;
+    height: 24px;
+    margin-top: 3px;
+    margin-left: 1px;
+  }
+  main .partner-search-item {
+    width: 280px;
+    height: 90px;
+    margin-top: 4px;
+    margin-left: 0px;
+    flex-direction: column;
+  }
+  main .partner-search-item form {
+    width: 280px;
+    height: 40px;
+    margin-top: 0px;
+    margin-left: 0px;
+  }
+  main .partner-search-item input {
+    width: 280px;
+    height: 40px;
+    margin-top: 0px;
+    margin-left: 0px;
+    background: white;
+    border: 1px solid #D4D4D4;
+    box-shadow: 0px 1px 2px rgba(0, 0, 0, 0.073313);
+    border-radius: 3px;
+    padding: 13px;
+    box-sizing: border-box;
+  }
+  main .partner-search-item .partner-search-item__button {
+    width: 280px;
+    height: 40px;
+    font-family: "Montserrat";
+    font-style: normal;
+    font-weight: 700;
+    font-size: 14px;
+    line-height: 17px;
+    color: white;
+    text-align: center;
+    margin-top: 10px;
+    margin-left: 0px;
+    border-radius: 40px;
+    border: none;
+    background: #ff4e50;
+    letter-spacing: 0.5px;
+  }
+  footer {
+    width: 320px;
+    height: 204px;
+    margin-top: 0px;
+    margin-left: 0px;
+    flex-direction: column;
+    padding-top: 21px;
+  }
+  footer h6 {
+    width: 119px;
+    height: 20px;
+    margin-top: 0px;
+    margin-left: 100px;
+    margin-right: 0px;
+  }
+  footer .company-menu {
+    text-align: center;
+    margin-bottom: 6px;
+    width: 280px;
+    height: 70px;
+    margin-top: 13px;
+    margin-left: 20px;
+  }
+  footer .company-menu h4 {
+    width: 70px;
+    height: 17px;
+    margin-top: 0px;
+    margin-left: 105px;
+    margin-bottom: 1px;
+  }
+  footer .company-menu__item {
+    width: 210px;
+    height: 52px;
+    margin-top: 0px;
+    margin-left: 35px;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    align-items: center;
+  }
+  footer .company-menu__item a {
+    font-family: "Roboto";
+    font-style: normal;
+    font-weight: 300;
+    font-size: 14px;
+    line-height: 26px;
+    color: #999999;
+    letter-spacing: 0px;
+    text-decoration: none;
+  }
+  footer .partners-item {
+    width: 64px;
+    height: 17px;
+    margin-top: 0px;
+    margin-left: 0px;
+  }
+  footer .partners-item h4 {
+    width: 64px;
+    height: 17px;
+    margin-top: 0px;
+    margin-left: 127.5px;
+  }
+  footer .designe-item {
+    width: 83px;
+    height: 12px;
+    margin-top: 14px;
+    margin-left: 120px;
+    letter-spacing: 1px;
+  }
+  footer .designe-item__logo {
+    width: 110px;
+    height: 24px;
+    margin-top: 7px;
+    margin-left: -17px;
+  }
+}
+/*# sourceMappingURL=main.css.map */
